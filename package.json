@@ -1,7 +1,7 @@
 {
-  "homepage": "https:MarcusKyung.github.io/help-queue-with-redux",
   "name": "help-queue",
   "version": "0.1.0",
+  "homepage": "https://MarcusKyung.github.io/help-queue-with-redux",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.4",
