@@ -4,13 +4,14 @@ import './index.css';
 import App from './components/App';
 import reportWebVitals from './reportWebVitals';
 import { createStore } from 'redux';
-import reducer from './reducers/ticket-list-reducer';
+// import reducer from './reducers/ticket-list-reducer'; //Don't forget to comment out if using rootReducer
 import { Provider } from 'react-redux';
+import rootReducer from './reducers/index';
 
 
-const store = createStore(reducer);
+const store = createStore(rootReducer);
 store.subscribe(() =>
-  console.log(store.getState())
+  console.log(store.getState()) //used for testing 
 );
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
