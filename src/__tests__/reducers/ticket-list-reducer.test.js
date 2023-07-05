@@ -1,4 +1,5 @@
 import ticketListReducer from "../../reducers/ticket-list-reducer"; //import the reducer which we've stored in variable called ticketListReducer
+import * as c from './../../actions/ActionTypes';
 
 //JEST Refresher: 
 // Describe blocks group related tests
@@ -40,7 +41,7 @@ describe('ticketListReducer', () => {
   test('Should successfully add new ticket data to mainTicketList', () => {
     const { names, location, issue, id } = ticketData;
     action = {
-      type: 'ADD_TICKET',
+      type: c.ADD_TICKET,
       names: names,
       location: location,
       issue: issue,
@@ -58,7 +59,7 @@ describe('ticketListReducer', () => {
 
   test('Should successfully delete a ticket', () => {
     action = {
-      type: 'DELETE_TICKET',
+      type: c.DELETE_TICKET,
       id: 1
     };
     expect(ticketListReducer(currentState, action)).toEqual({

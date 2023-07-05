@@ -1,3 +1,5 @@
+import * as c from './../actions/ActionTypes';
+
 //Function has two parameters, first is state that needs to be changed and second is action that needs to be applied
 //To pass initial test return the same state as passed into reducer (return state;)
 
@@ -9,7 +11,8 @@
 const reducer = (state = {}, action) => {
   const { names, location, issue, id } = action;
   switch (action.type) {
-  case 'ADD_TICKET':
+  // case 'ADD_TICKET':
+  case c.ADD_TICKET:
     return Object.assign({}, state, { 
       [id]: {
         names: names,
@@ -19,7 +22,8 @@ const reducer = (state = {}, action) => {
       }
     });
 
-  case 'DELETE_TICKET':
+  // case 'DELETE_TICKET':
+  case c.DELETE_TICKET:
     let newState = { ...state }; //makes copy of state
     delete newState[id]; //delete object operator to remove key value pair from newState. Technically this is mutating, but we aren't mutating the original, just a copy.
     return newState; //returns newState with deleted ticket
